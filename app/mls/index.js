@@ -2,7 +2,7 @@
 import { headers } from "next/headers"
 import { getAuthHeaders } from "../oauth"
 import axios from "axios"
-import { Agent } from "https"
+import https from "https"
 
 //process.env.NODE_TLS_REJECT_UNAUTHORIZED='0'
 
@@ -10,7 +10,7 @@ const getAuthCookie = () => {
     return headers().get('x-mls-cookie')
 }
 
-const agent = new Agent({  
+const agent = new https.Agent({  
     rejectUnauthorized: false
   });
 
