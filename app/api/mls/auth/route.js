@@ -9,6 +9,7 @@ export async function GET() {
     const url = 'https://members.mlsvallarta.com/mls/mlsvallarta/login'
     const method = 'POST'
     const headers = await getAuthHeaders(url, method)
+
     if(isDev){
         const cookie = await fetch(url, {
             method: method,
@@ -27,6 +28,7 @@ export async function GET() {
     
         return NextResponse.json(cookie)
     }
+    
     else {
         return NextResponse.json(headers)
     }

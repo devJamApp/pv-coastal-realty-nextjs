@@ -9,17 +9,16 @@ export const config = {
 
 export async function middleware(req) {
 
-    const reqHeaders = new Headers(req.headers);
-    reqHeaders.set('x-next-pathname', req.nextUrl.pathname);
-
-    const response = NextResponse.next({
-        request: {
-            headers: reqHeaders
-        }
-    })
-
     const cookie = await req.cookies.get('mls-authenticator')
 
+    const headers = new Headers(req.headers)
+
+    if(cookie){
+        headers.set('x-mls-cookie', `${cookie.name}=${cookie.value}`)
+    }
+
+    let authCookie;
+    
     if(!cookie){
 
         const url = 'https://members.mlsvallarta.com/mls/mlsvallarta/login'
@@ -31,12 +30,13 @@ export async function middleware(req) {
         .then((res) => res.json())
 
         if(isDev){
-            response.cookies.set(
-                auth.name,
-                auth.value, 
-                { path: '/' }
-            )
+            authCookie = {
+                name: auth.name,
+                value: auth.value, 
+            }
+            headers.set('x-mls-cookie', `${auth.name}=${auth.value}`)
         }
+
         else {
             const newCookie = await fetch(url, {
                 method: method,
@@ -52,13 +52,28 @@ export async function middleware(req) {
                 const value = cookie[1].split(';')[0]
                 return { name: cookie[0], value: value }
             })
-            response.cookies.set(
-                auth.name,
-                auth.value, 
-                { path: '/' }
-            )
+
+            authCookie = {
+                name: newCookie.name,
+                value: newCookie.value, 
+            }
+            headers.set('x-mls-cookie', `${newCookie.name}=${newCookie.value}`)
         }
         
+    }
+
+    const response = NextResponse.next({
+        request: {
+            headers: headers
+        }
+    })
+
+    if(authCookie){
+        response.cookies.set(
+            authCookie.name,
+            authCookie.value, 
+            { path: '/' }
+        )
     }
 
     return response
