@@ -23,6 +23,7 @@ export async function GET() {
         const value = cookie[1].split(';')[0]
         return { name: cookie[0], value: value }
     })
+    .catch((err) => console.log(err))
     
-    return NextResponse.json(cookie)
+    return NextResponse.json(cookie ? cookie : {})
 }

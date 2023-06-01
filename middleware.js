@@ -17,7 +17,7 @@ export async function middleware(req) {
 
         const response = NextResponse.next()
         
-        if(newCookie){
+        if(newCookie.name){
             response.cookies.set(
                 newCookie.name,
                 newCookie.value, 
