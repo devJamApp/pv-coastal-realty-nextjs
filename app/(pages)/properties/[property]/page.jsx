@@ -6,6 +6,9 @@ import FeaturesList from "@/app/components/FeaturesList"
 import Mapbox from "@/app/components/Map"
 import Link from "next/link"
 import Contact from "@/app/components/Contact"
+import { usePropertyJSON } from "@/app/hooks"
+import JsonLd from "@/app/components/JsonLd"
+import SEO from "@/app/components/SEO"
 
 //process.env.NODE_TLS_REJECT_UNAUTHORIZED='0'
 
@@ -13,8 +16,32 @@ const Page = async ({ params : { property: id }}) => {
 
   const property = await getProperty(id)
 
+  const jsonData = usePropertyJSON({
+    address: {
+      street: property?.address?.street,
+      city: property?.address?.city,
+      state: property?.address?.state,
+      postalCode: property?.address?.postalCode,
+      coordinates: {
+        lat: property?.address?.coordinates?.lat,
+        lon: property?.address?.coordinates?.lon
+      }
+    },
+    price: property?.price?.current,
+    description: property?.description?.en,
+    images: property?.images,
+    type: property?.type?.en
+  })
+
   return (
     <>
+      <SEO 
+        pageDescription={property?.description?.en}
+        pageTitle={property?.title}
+        pageImage={property.images[0]?.url}
+        pageUrl={`${process.env._PATH}/properties/${id}`}
+      />
+      <JsonLd data={jsonData} />
       <Banner title={property?.title} image={property.images[0]?.url} />
       <div className="flex flex-col mx-auto p-4 md:p-8 xl:px-0 xl:py-16 max-w-screen-xl space-y-8 xl:space-y-16">
         <div className="flex flex-row space-x-8 2xl:space-x-16">
