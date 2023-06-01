@@ -200,7 +200,7 @@ export const regions = [
                 id: 30,
                 title: 'Conchas Chinas',
                 description: "Conchas Chinas offers a picturesque coastal living experience. Nestled between lush mountains and the sparkling Pacific Ocean, it boasts stunning sunsets and pristine beaches. The neighborhood exudes charm with its traditional Mexican architecture and vibrant local culture. Residents enjoy a tranquil atmosphere, a warm tropical climate, and easy access to water activities, making it a desirable place to call home.",
-                imageUrl: '/conchas-chinas.png'
+                imageUrl: '/conchas-chinas.webp'
             },
         ],
         imageUrl: "/vallarta-central.webp"
@@ -288,7 +288,7 @@ export const regions = [
                 id: 51,
                 title: 'Cajón de Penas',
                 description: "Lake Cajón de Peñas is a picturesque natural reservoir located in Jalisco, Mexico. Surrounded by rugged mountains and lush vegetation, it offers a serene and tranquil setting. The lake's crystal-clear waters provide a habitat for diverse flora and fauna, making it a haven for nature lovers and birdwatchers. Its stunning beauty and peaceful ambiance make it an ideal destination for outdoor enthusiasts and those seeking a peaceful retreat.",
-                imageUrl: "./cajon-de-penas.png"
+                imageUrl: "./cajon-de-penas.webp"
             },
         ],
         imageUrl: "/costalegre.webp"
