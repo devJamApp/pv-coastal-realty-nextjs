@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server"
 import { getAuthHeaders } from "@/app/oauth"
 
-process.env.NODE_TLS_REJECT_UNAUTHORIZED='0'
+//process.env.NODE_TLS_REJECT_UNAUTHORIZED='0'
 
 export async function GET() {
 
