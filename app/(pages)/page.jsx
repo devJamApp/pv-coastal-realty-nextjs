@@ -8,8 +8,7 @@ export default async function Home() {
   return (
     <>
       <Hero />
-      <Featured />
-      <Regions />
+
       <Contact />
     </>
 

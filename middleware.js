@@ -69,13 +69,13 @@ export async function middleware(req) {
         }
     })
 
-    if(authCookie){
-        response.cookies.set(
-            authCookie.name,
-            authCookie.value, 
-            { path: '/' }
-        )
-    }
+    //if(authCookie){
+    //    response.cookies.set(
+    //        authCookie.name,
+    //        authCookie.value, 
+    //        { path: '/' }
+    //    )
+    //}
 
     return response
 
