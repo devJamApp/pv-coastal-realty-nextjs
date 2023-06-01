@@ -7,7 +7,7 @@ import Mapbox from "@/app/components/Map"
 import Link from "next/link"
 import Contact from "@/app/components/Contact"
 
-process.env.NODE_TLS_REJECT_UNAUTHORIZED='0'
+//process.env.NODE_TLS_REJECT_UNAUTHORIZED='0'
 
 const Page = async ({ params : { property: id }}) => {
 
@@ -67,7 +67,7 @@ const Page = async ({ params : { property: id }}) => {
           </div>
 
         </div>
-        <div className="flex flex-col space-y-8">
+        <div className="flex flex-col space-y-8 overflow-hidden">
           <div className="w-full h-[500px]">
               <Mapbox 
                 title={property.title}

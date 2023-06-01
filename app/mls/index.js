@@ -2,12 +2,17 @@
 import { headers } from "next/headers"
 import { getAuthHeaders } from "../oauth"
 import axios from "axios"
+import { Agent } from "https"
 
-process.env.NODE_TLS_REJECT_UNAUTHORIZED='0'
+//process.env.NODE_TLS_REJECT_UNAUTHORIZED='0'
 
 const getAuthCookie = () => {
     return headers().get('x-mls-cookie')
 }
+
+const agent = new Agent({  
+    rejectUnauthorized: false
+  });
 
 
 const transformProperty = (e) => {
@@ -115,10 +120,11 @@ export const getProperty = async (id) => {
             'Authorization': authHeaders, 
             'Cookie': cookie
         },
-        data : body
+        data : body,
+        httpsAgent: agent
     }
 
-    const property = await axios.request(config)
+    const property = await axios.request(config, https)
     .then((res) => res.data.propertyModel)
     .catch((err) => console.log(err))
  
@@ -149,7 +155,8 @@ export const getFeatured = async (limit) => {
             'Authorization': authHeaders, 
             'Cookie': cookie
         },
-        data : body
+        data : body,
+        httpsAgent: agent
     }
     
     
@@ -183,7 +190,8 @@ export const searchProperties = async (data) => {
             'Authorization': authHeaders, 
             'Cookie': cookie
         },
-        data : body
+        data : body,
+        httpsAgent: agent
     }
     const properties = await axios.request(config)
     .then((res) => res.data?.properties)

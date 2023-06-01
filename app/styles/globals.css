@@ -168,4 +168,8 @@
       z-index: 2;
       @apply bg-sky-500;
    }
+
+   .mapboxgl-control-container{
+    @apply hidden;
+   }
     
