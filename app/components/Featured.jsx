@@ -8,17 +8,9 @@ const Featured = async () => {
 
   return (
     <div id="featured-properties" className="flex flex-col px-8 py-16">
-      <div className="flex flex-row pb-2 border-b space-x-4">
-        <h2 className="text-4xl font-bold">
-          Featured Properties
-        </h2>
-        <Link 
-          href="/featured-properties"
-          className="self-end hover:underline"
-        >
-          View All
-        </Link>
-      </div>
+      <h2 className="pb-2 border-b text-4xl font-bold">
+        Featured Properties
+      </h2>
       <FeaturedCarousel properties={properties} />
     </div>
   )
