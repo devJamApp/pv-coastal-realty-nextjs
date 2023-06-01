@@ -24,7 +24,7 @@ export async function middleware(req) {
         const url = 'https://members.mlsvallarta.com/mls/mlsvallarta/login'
         const method = 'POST'
 
-        const auth = await fetch(`${process.env.NEXT_API_BASE_PATH}/mls/auth`, {
+        const auth = await fetch(`${process.env.NEXT_BASE_PATH}/api/mls/auth`, {
             cache: 'no-store' 
         })
         .then((res) => res.json())
