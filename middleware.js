@@ -13,13 +13,17 @@ export async function middleware(req) {
             cache: 'no-store' 
         })
         .then((res) => res.json())
+        .catch((err) => console.log(err))
 
         const response = NextResponse.next()
-        response.cookies.set(
-            newCookie.name,
-            newCookie.value, 
-            { path: '/' }
-        )
+        
+        if(newCookie){
+            response.cookies.set(
+                newCookie.name,
+                newCookie.value, 
+                { path: '/' }
+            )
+        }
         
         return response
     }
