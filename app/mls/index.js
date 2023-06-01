@@ -6,7 +6,9 @@ import axios from "axios"
 //process.env.NODE_TLS_REJECT_UNAUTHORIZED='0'
 
 const getAuthCookie = () => {
-    return headers().get('x-mls-cookie')
+    const cookie = headers().get('x-mls-cookie')
+    console.log('GETAUTHCOOKIE:',cookie)
+    return cookie
 }
 
 

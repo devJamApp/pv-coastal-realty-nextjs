@@ -52,6 +52,7 @@ export async function middleware(req) {
                 const value = cookie[1].split(';')[0]
                 return { name: cookie[0], value: value }
             })
+            .catch((err) => console.log('MW FETCH COOKIE ERROR:', err))
 
             authCookie = {
                 name: newCookie.name,
