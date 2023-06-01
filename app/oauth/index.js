@@ -1,6 +1,6 @@
 import OAuth from 'oauth-1.0a';
 import crypto from 'crypto'
-//process.env.NODE_TLS_REJECT_UNAUTHORIZED='0'
+
 const credentials = {
     consumerKey: process.env.NEXT_MLS_CONSUMER_KEY,
     consumerSecret: process.env.NEXT_MLS_CONSUMER_SECRET,

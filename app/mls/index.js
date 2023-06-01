@@ -3,11 +3,10 @@ import { cookies } from "next/headers"
 import { getAuthHeaders } from "../oauth"
 import axios from "axios"
 
-process.env.NODE_TLS_REJECT_UNAUTHORIZED='0'
+//process.env.NODE_TLS_REJECT_UNAUTHORIZED='0'
 
 const getAuthCookie = () => {
     const cookie = cookies().get('mls-authenticator')
-    console.log(cookie)
     return `${cookie.name}=${cookie.value}`
 }
 
