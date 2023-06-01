@@ -17,13 +17,11 @@ export async function middleware(req) {
 
         const response = NextResponse.next()
         
-        if(newCookie.name){
-            response.cookies.set(
-                newCookie.name,
-                newCookie.value, 
-                { path: '/' }
-            )
-        }
+        response.cookies.set(
+            newCookie.name,
+            newCookie.value, 
+            { path: '/' }
+        )
           
         return response
     }
