@@ -5,7 +5,7 @@ const Contact = () => {
     <div className="relative flex flex-row">
       <div className="relative h-screen w-full">
         <Image
-          src="/paradise-beach.jpg"
+          src="/paradise-beach.webp"
           fill={true}
           className="object-cover"
           alt="PV Coastal Realty: Contact Us Today To Find Your Dream Home In Paradise"

@@ -8,7 +8,7 @@ const Banner = ({ image, title }) => {
         <Image 
           priority
           loading="eager"
-          src={image ? image : '/banner-image.jpg'}
+          src={image ? image : '/banner-image.webp'}
           alt={`PV Coastal Realty: ${title}`}
           fill={true}
           className="object-cover z-10"

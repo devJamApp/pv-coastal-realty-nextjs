@@ -18,7 +18,7 @@ const PropertyCard = ({ property, i }) => {
         />
         :
         <Image 
-          src="/img-placeholder.jpg"
+          src="/img-placeholder.webp"
           fill={true}
           className="rounded-t-md object-cover"
           alt="PV Coastal Realty: No Image Available"

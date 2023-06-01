@@ -119,7 +119,7 @@ const ImageGallery = ({ images }) => {
             <div className="w-full space-y-2">
                 <div className="relative min-h-[500px]">
               <Image 
-              src="/img-placeholder.jpg"
+              src="/img-placeholder.webp"
               fill={true}
               className="rounded-t-md object-cover"
               alt="PV Coastal Realty: No Image Available"

@@ -23,7 +23,7 @@ const Page = ({ params: { region }}) => {
               <li key={i} className="flex flex-col h-[350px]">
                     <div className="relative grow">
                     <Image 
-                        src={zone.imageUrl ? zone.imageUrl : '/pv-coastal-header.jpg'} 
+                        src={zone.imageUrl ? zone.imageUrl : '/pv-coastal-header.webp'} 
                         fill={true}
                         className="rounded-t-md object-cover"
                         alt={`PV Coastal Realty: ${zone.title} Zone`}
