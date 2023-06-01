@@ -9,21 +9,21 @@ export async function GET() {
     const method = 'POST'
     const headers = await getAuthHeaders(url, method)
 
-    const cookie = await fetch(url, {
-        method: method,
-        headers: { headers },
-        body: JSON.stringify({
-            mlsId: 'mlsvallarta',
-            userName: process.env.NEXT_MLS_CLIENT_USER,
-            secret: process.env.NEXT_MLS_CLIENT_SECRET
-        })
-    })
-    .then((res) => {
-        const cookie = res.headers.get('Set-Cookie').split('=')
-        const value = cookie[1].split(';')[0]
-        return { name: cookie[0], value: value }
-    })
-    .catch((err) => console.log(err))
+    //const cookie = await fetch(url, {
+    //    method: method,
+    //    headers: { headers },
+    //    body: JSON.stringify({
+    //        mlsId: 'mlsvallarta',
+    //        userName: process.env.NEXT_MLS_CLIENT_USER,
+    //        secret: process.env.NEXT_MLS_CLIENT_SECRET
+    //    })
+    //})
+    //.then((res) => {
+    //    const cookie = res.headers.get('Set-Cookie').split('=')
+    //    const value = cookie[1].split(';')[0]
+    //    return { name: cookie[0], value: value }
+    //})
+    //.catch((err) => console.log(err))
     
-    return NextResponse.json(cookie ? cookie : { name: 'fuckedup-cookie', value: 'notcool'})
+    return NextResponse.json(headers)
 }
