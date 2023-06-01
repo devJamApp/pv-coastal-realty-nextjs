@@ -1,9 +1,9 @@
 /** @type {import('next').NextConfig} */
-import { isDev } from './data/settings'
+
 
 const nextConfig = {
     images: {
-        unoptimized: isDev ? true : false,
+        //unoptimized: true,
         domains: ['members.mlsvallarta.com'],
     },
     experimental: {
