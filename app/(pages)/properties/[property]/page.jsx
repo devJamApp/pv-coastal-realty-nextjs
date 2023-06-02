@@ -39,7 +39,7 @@ const Page = async ({ params : { property: id }}) => {
         pageDescription={property?.description?.en}
         pageTitle={property?.title}
         pageImage={property.images[0]?.url}
-        pageUrl={`${process.env._PATH}/properties/${id}`}
+        pageUrl={`${process.env.NEXT_BASE_PATH}/properties/${id}`}
       />
       <JsonLd data={jsonData} />
       <Banner title={property?.title} image={property.images[0]?.url} />

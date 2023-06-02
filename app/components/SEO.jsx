@@ -5,7 +5,6 @@ const SEO = ({
     pageTitle,
     pageImage,
     pageUrl,
-    pageKeywords,
   }) => {
   return (
     <Head>
