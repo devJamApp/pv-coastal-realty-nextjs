@@ -1,19 +1,23 @@
 'use server'
-import { headers } from "next/headers"
-import { getAuthHeaders } from "../oauth"
+import addOAuthInterceptor from 'axios-oauth-1.0a'
 import axios from "axios"
 import https from "https"
-
-//process.env.NODE_TLS_REJECT_UNAUTHORIZED='0'
-
-const getAuthCookie = () => {
-    return headers().get('x-mls-cookie')
-}
 
 const agent = new https.Agent({  
     rejectUnauthorized: false
   });
 
+const client = axios.create();
+
+const options = {
+    algorithm: "HMAC-SHA1",
+    key: process.env.NEXT_MLS_CONSUMER_KEY,
+    secret: process.env.NEXT_MLS_CONSUMER_SECRET,
+    token: process.env.NEXT_MLS_ACCESS_TOKEN,
+    tokenSecret: process.env.NEXT_MLS_TOKEN_SECRET
+};
+
+addOAuthInterceptor(client, options);
 
 const transformProperty = (e) => {
 
@@ -104,27 +108,16 @@ const transformProperty = (e) => {
 
 export const getProperty = async (id) => {
 
-    const cookie = getAuthCookie()
-    const url = `https://members.mlsvallarta.com/mls/mlsvallarta/api/property/${id}`
-    const method = 'POST'
-    const authHeaders = await getAuthHeaders(url, method)
-
-    let body = JSON.stringify({propertyId: `${id}`})
-
-    let config = {
-        method: method,
+    const config = {
+        method: 'POST',
         maxBodyLength: Infinity,
-        url: url,
-        headers: { 
-            'Content-Type': 'application/json', 
-            'Authorization': authHeaders, 
-            'Cookie': cookie
-        },
-        data : body,
+        url: `https://members.mlsvallarta.com/mls/mlsvallarta/api/property/${id}`,
+        headers: {'Content-Type': 'application/json' },
+        data : JSON.stringify({propertyId: `${id}`}),
         httpsAgent: agent
     }
 
-    const property = await axios.request(config, https)
+    const property = await client(config)
     .then((res) => res.data.propertyModel)
     .catch((err) => console.log(err))
  
@@ -139,28 +132,17 @@ export const getProperty = async (id) => {
 
 export const getFeatured = async (limit) => {
 
-    const cookie = getAuthCookie()
-    const url = 'https://members.mlsvallarta.com/mls/mlsvallarta/api/property/PVCOR/status'
-    const method = 'POST'
-    const authHeaders = await getAuthHeaders(url, method)
-
-    let body = JSON.stringify({"cmaView":false,"regView":false,"aboutToExpireView":false,"page":1,"status":"CURRENT","pageSize":limit})
-
-    let config = {
-        method: method,
+    const config = {
+        method: 'POST',
         maxBodyLength: Infinity,
-        url: url,
-        headers: { 
-            'Content-Type': 'application/json', 
-            'Authorization': authHeaders, 
-            'Cookie': cookie
-        },
-        data : body,
+        url: 'https://members.mlsvallarta.com/mls/mlsvallarta/api/property/PVCOR/status',
+        headers: { 'Content-Type': 'application/json' },
+        data : JSON.stringify({"cmaView":false,"regView":false,"aboutToExpireView":false,"page":1,"status":"CURRENT","pageSize":limit}),
         httpsAgent: agent
     }
     
     
-    const properties = await axios.request(config)
+    const properties = await client(config)
         .then((res) => res.data?.properties)
         .catch((err) => console.log(err))
 
@@ -176,24 +158,16 @@ export const getFeatured = async (limit) => {
 }
 
 export const searchProperties = async (data) => {
-    const cookie = getAuthCookie()
-    const url = 'https://members.mlsvallarta.com/mls/mlsvallarta/api/property/search'
-    const method = 'POST'
-    const authHeaders = await getAuthHeaders(url, method)
-    let body = JSON.stringify(data)
-    let config = {
-        method: method,
+
+    const config = {
+        method: 'POST',
         maxBodyLength: Infinity,
-        url: url,
-        headers: { 
-            'Content-Type': 'application/json', 
-            'Authorization': authHeaders, 
-            'Cookie': cookie
-        },
-        data : body,
+        url: 'https://members.mlsvallarta.com/mls/mlsvallarta/api/property/search',
+        headers: { 'Content-Type': 'application/json' },
+        data : JSON.stringify(data),
         httpsAgent: agent
     }
-    const properties = await axios.request(config)
+    const properties = await client(config)
     .then((res) => res.data?.properties)
     .catch((err) => console.log(err))
     let transformed = []

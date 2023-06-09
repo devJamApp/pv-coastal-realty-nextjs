@@ -10,7 +10,6 @@ import { usePropertyJSON } from "@/app/hooks"
 import JsonLd from "@/app/components/JsonLd"
 import SEO from "@/app/components/SEO"
 
-//process.env.NODE_TLS_REJECT_UNAUTHORIZED='0'
 
 const Page = async ({ params : { property: id }}) => {
 

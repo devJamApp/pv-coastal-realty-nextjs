@@ -1,3 +1,17 @@
+export const agents = [
+    {
+        name: 'Marc Leblanc',
+        description: 'description',
+        imageUrl: ''
+    },
+    {
+        name: 'Nicolas',
+        description: 'description',
+        imageUrl: ''
+    },
+]
+
+
 export const popularRegions = [
     {
         title: 'Bucerias',
