@@ -61,7 +61,7 @@ const ImageGallery = ({ images }) => {
                                 fill={true}
                                 className="rounded-sm object-cover hover:scale-105"
                                 alt={image.alt}
-                                placeholder="blue"
+                                placeholder="blur"
                                 blurDataURL={image.placeholder}
                             />
                         </li>
