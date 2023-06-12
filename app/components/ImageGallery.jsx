@@ -9,7 +9,7 @@ const ImageGallery = ({ images }) => {
     if(images.length > 0){
     const [ current, setCurrent ] = useState({ image: images[0], i: 0 })
     const [ lightbox, setLightbox ] = useState({ open: false, image: current})
-
+    
     const set = (dir) => {
         if(dir === 'next'){
             if(current.i + 1 === images.length){

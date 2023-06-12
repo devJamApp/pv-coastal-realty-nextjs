@@ -50,18 +50,17 @@ const transformProperty = (e) => {
 
     let images = []
     const alt = `${e.propertyName} ${e.propertyTypeValue.propertyTypeValue.localizedName.strings.en_us} for sale in ${e.propertyAddress.zone.name}.`
-    e.propertySlide.images.map(async(image, i) => {
-        const img = image.imageValue.filter(item => item.imageMeta.alias === 'hero')[0]
-        const url = `https://members.mlsvallarta.com/mls/property/image/mlsvallarta/${e.id}/${img.fileName}`
-        const placeholder = `/_next/image?url=${encodeURIComponent(url)}&w=640&q=75`
+    e.propertySlide.images.map((image, i) => {
+        const url = `https://members.mlsvallarta.com/mls/property/image/mlsvallarta/${e.id}/hero_${image.name}.jpg`
+        const placeholder = `https://members.mlsvallarta.com/mls/property/image/mlsvallarta/${e.id}/thumbList_${image.name}.jpg`
         const obj = {
             url: url,
             alt: alt,
-            order: img.imageOrder,
             index: i,
             placeholder: placeholder
         }
         images.push(obj)
+        
     })
     //images.sort((i1, i2) => (i1.order > i2.order) ? 1 : (i1.order < i2.order) ? -1 : 0)
 
