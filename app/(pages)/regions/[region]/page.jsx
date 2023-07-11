@@ -17,13 +17,13 @@ const Page = ({ params: { region } }) => {
     <>
       <Banner title={title} image={data.imageUrl} />
       <div className="flex flex-col space-y-8 p-4 md:p-8 xl:p-16">
-        <p className="text-lg">
+        <p className="lg:text-lg">
           {data.description}
         </p>
-        <h2 className="text-4xl font-bold pb-2 border-b ">
+        <h2 className="text-3xl md:text-4xl font-bold pb-2 border-b ">
           Zones in {title}
         </h2>
-        <div className="grid grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         {data.zones.map((zone) => {
           return (
             <div key={zone.id} className="flex flex-col space-y-4">
@@ -37,10 +37,10 @@ const Page = ({ params: { region } }) => {
                 </div>
             <div className="flex flex-col grow">
               <div className="flex flex-col grow">
-                  <h3 className="font-medium text-3xl border-b pb-2">
+                  <h3 className="font-medium text-2xl lg:text-3xl border-b pb-2">
                     {zone.title}
                   </h3>
-                    <p className="my-auto py-4">
+                    <p className="hidden lg:block my-auto py-4">
                         {zone.description}
                     </p>
                 </div>
@@ -55,7 +55,7 @@ const Page = ({ params: { region } }) => {
           )
         })}
       </div>
-        <h2 className="text-4xl font-bold pb-2 border-b ">
+        <h2 className="text-3xl lg:text-4xl font-bold pb-2 border-b ">
           Browse All {title} Properties
         </h2>
         <ShowProperties region={params.regionId} zones={params.zoneIds} />

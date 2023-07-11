@@ -11,31 +11,31 @@ const Page = () => {
   return (
     <>
       <Banner title="Regions" />
-      <div className="flex flex-col p-8">
-        <h2 className="text-4xl font-bold pb-2 border-b">
+      <div className="flex flex-col px-4 py-8 md:p-8">
+        <h2 className="text-2xl md:text-4xl font-bold pb-2 border-b">
           Browse Properties By Region
         </h2>
         <ul className="flex flex-col space-y-12 py-8">
           {regions.map((region, i) => {
             return (
-              <li key={i} className="flex flex-row space-x-8">
-                    <div className="relative w-1/2">
+              <li key={i} className="flex flex-col lg:flex-row space-y-4 lg:space-x-8 lg:space-y-0">
+                    <div className="relative h-[350px] lg:h-auto lg:w-1/2">
                     <Image
                         src={region.imageUrl} 
                         fill={true}
                         className="rounded-l-md object-cover"
                     />
                     </div>
-                <div className="flex flex-col w-1/2 space-y-2">
+                <div className="flex flex-col lg:w-1/2 lg:space-y-2">
                   <div className="flex flex-col grow">
-                      <h3 className="font-medium text-4xl border-b pb-2 mb-2">
+                      <h3 className="font-medium text-3xl md:text-4xl border-b pb-2 mb-2">
                         {region.title}
                       </h3>
-                        <p>
+                        <p className="hidden lg:block">
                             {region.description}
                         </p>
                     </div>
-                    <div className="py-1 space-y-2">
+                    <div className="pb-4 lg:py-0 space-y-2">
                     <span className="font-medium">
                       Choose A Zone To View Properties:
                     </span>

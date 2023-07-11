@@ -26,18 +26,18 @@ const PropertyCard = ({ property, i }) => {
         }
       </div>
       <div className="flex flex-col grow">
-        <div className="flex flex-col space-y-2 p-4 my-auto">
-          <div className="flex flex-row space-x-2">
-            <h3 className="font-medium text-xl">
+        <div className="flex flex-col space-y-2 py-4 md:px-4 my-auto">
+          <div className="flex flex-col lg:flex-row space-y-2 lg:space-y-0 lg:space-x-2">
+            <h3 className="font-medium text-lg lg:text-xl">
               {property.title}
             </h3>
-            <span className="text-lg self-end text-neutral-500">
+            <span className="lg:text-lg lg:self-end text-neutral-500">
               {property.price.current}
             </span>
           </div>
           <div className="flex flex-row items-center space-x-1">
             <MdLocationPin className="text-sky-500 text-xl" />
-            <span>
+            <span className="text-sm md:text-base">
               {property.address.street}, {property.address.city}, {property.address.state}
             </span>
           </div>

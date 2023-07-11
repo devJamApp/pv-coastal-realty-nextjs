@@ -83,7 +83,7 @@ const ImageGallery = ({ images }) => {
                 />
             }
             <div className="w-full space-y-2">
-                <div className="relative min-h-[500px]" role="button">
+                <div className="relative min-h-[350px] md:min-h-[425px] lg:min-h-[500px]" role="button">
                     <Image 
                         src={current.image.url} 
                         placeholder="blur"

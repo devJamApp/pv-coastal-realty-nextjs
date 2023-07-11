@@ -35,7 +35,7 @@ const ShowProperties = ({ region, zones }) => {
 
   return (
     <div className="flex flex-col space-y-8 xl:space-y-16">
-        <ul className="grid grid-cols-4 gap-8">
+        <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {properties.length > 0 &&
             properties.map((property, i) => {
               return <PropertyCard property={property} key={i} i={i} />

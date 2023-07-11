@@ -6,14 +6,14 @@ import Link from "next/link"
 const FeaturedCard = ({ property }) => {
 
   return (
-    <div id={property.id} className="carousel-item w-full flex flex-row space-x-8 py-8" >
-      <div className="flex flex-col grow w-1/2">
+    <div id={property.id} className="carousel-item w-full flex flex-col-reverse lg:flex-row lg:space-x-8 py-4 lg:py-8" >
+      <div className="flex flex-col grow lg:w-1/2 my-4 lg:my-0">
         <div className="flex flex-col space-y-2">
-          <div className="flex flex-row space-x-2">
-            <h3 className="font-medium text-3xl">
+          <div className="flex flex-col lg:space-x-2 space-y-2 lg:space-y-0 lg:flex-row">
+            <h3 className="font-medium text-2xl md:text-3xl">
               {property.title}
             </h3>
-            <span className="text-2xl self-end text-neutral-500">
+            <span className="text-xl md:text-2xl lg:self-end text-neutral-500">
               {property.price.current}
             </span>
           </div>
@@ -24,11 +24,11 @@ const FeaturedCard = ({ property }) => {
             </span>
           </div>
         </div>
-        <div className="flex flex-col space-y-2 my-auto">
+        <div className="hidden lg:flex flex-col space-y-2 my-2 lg:my-auto">
           {property.description.en}
         </div>
         { property.features &&
-          <div className="flex flex-col my-auto space-y-2">
+          <div className="flex flex-col space-y-2 my-4 lg:my-auto">
             <span className="text-2xl">Features</span>
             <FeaturesList features={property.features} />
           </div>
@@ -40,7 +40,7 @@ const FeaturedCard = ({ property }) => {
             View Property
         </Link>
       </div>
-      <div className="relative w-1/2 min-h-[500px]">
+      <div className="relative lg:w-1/2 h-[350px] lg:min-h-[500px]">
         <Image 
           src={property.images[0].url} 
           fill={true}

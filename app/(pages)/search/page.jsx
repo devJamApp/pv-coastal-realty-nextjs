@@ -39,7 +39,7 @@ const Page = () => {
     <>
       <Banner title="Search Properties"/>
       <div className="flex flex-col mx-auto p-4 md:p-8 xl:px-0 xl:py-16 max-w-screen-xl space-y-8 xl:space-y-16">
-        <h2 className="text-4xl font-bold pb-2 border-b">
+        <h2 className="text-3xl md:text-4xl font-bold pb-2 border-b">
           Find Your Dream Home
         </h2>
         <form onSubmit={(e) => search(e)} className="flex flex-col space-y-3">  

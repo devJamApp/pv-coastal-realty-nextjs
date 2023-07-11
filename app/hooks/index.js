@@ -65,6 +65,7 @@ export const getTitleFromSlug = (string) => {
   }
 
   export const usePropertyJSON = (data) => {
+   
     return `{
       "@context": "https://schema.org",
       "@graph": [
@@ -97,17 +98,17 @@ export const getTitleFromSlug = (string) => {
                   "latitude": ${data.address.coordinates.lat},
                   "longitude": ${data.address.coordinates.lon}
               },
-              "description": "${data.description}",
+              "description": "${data.description.replace(new RegExp('\r?\n','g'), '')}",
               "photo": {
                   "@type": "ImageObject",
-                  "url": ${data.images.map((image) => {
-                    return `${image.url}`
+                  "url": ${data.images?.map((image) => {
+                    return `"${image.url}"`
                   })}          
               }
           },
           {
               "@type": "Offer",
-              "price": ${data.price},
+              "price": "${data.price}",
               "priceCurrency": "USD",
           }
       ]

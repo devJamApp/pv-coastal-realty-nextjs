@@ -6,8 +6,9 @@ import { navMenu } from "@/data"
 const Footer = () => {
   return (
     <footer>
-      <div className="relative bg-zinc-100 p-8 rounded-t-md shadow-lg flex flex-row items-center">
-        <div className="flex flex-col items-center space-y-4">
+      <div className="relative bg-zinc-100 p-8 rounded-t-md shadow-lg flex flex-col lg:flex-row lg:items-center">
+        <div className="flex flex-col-reverse">
+        <div className="flex flex-row lg:flex-col items-center space-y-4">
         <Link 
             href="/" 
             className="relative mr-auto my-auto"
@@ -51,7 +52,7 @@ const Footer = () => {
             </Link>
         </div>
         </div>
-        <ul className="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 flex flex-row space-x-6 text-zinc-900 text-xl font-medium mx-auto">
+        <ul className="relative py-4 lg:py-0 lg:absolute lg:top-1/2 lg:left-1/2 lg:-translate-y-1/2 lg:-translate-x-1/2 flex flex-col items-center lg:flex-row lg:space-x-6 text-zinc-900 text-xl font-medium mx-auto">
             {navMenu.map((item, i) => {
                 return (   
                 <li 
@@ -65,7 +66,8 @@ const Footer = () => {
                 )
             })}
         </ul>
-        <div className="flex flex-row items-center ml-auto">
+        </div>
+        <div className="flex flex-row items-center ml-auto mr-auto lg:mr-0">
         <a href="/">
               <Image 
                   loading="lazy"
@@ -95,17 +97,17 @@ const Footer = () => {
           </a>
         </div>
       </div>
-      <div className="flex flex-row items-center space-x-2 justify-center bg-sky-900 p-4 text-zinc-50 ">
+      <div className="flex flex-col lg:flex-row items-center space-y-2 lg:space-y-0 lg:space-x-2 justify-center bg-sky-900 p-4 text-zinc-50 ">
         <span>
           Copyright © 2023 PV Coastal Realty.
         </span>
         <a 
-          href="https://www.devjam.app/" 
+          href="https://www.adrenalizedigital.ca/" 
           target="_blank" 
           referrerPolicy="no-referrer"
           className="hover:brightness-125 hover:text-sky-200 font-medium"
         >
-          Powered by devJam.
+          Powered by Adrenalize.
         </a>
       </div>
     </footer>

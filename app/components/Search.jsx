@@ -12,7 +12,7 @@ const Search = ({ loading }) => {
 
 
     const [ zones, setZones ] = useState([])
-    const [ value, setValue ] = useState({ min: 100000, max: 1000000 })
+    const [ value, setValue ] = useState({ min: 50000, max: 1000000 })
 
     const formatter = new Intl.NumberFormat('en-US', {
         style: 'currency',
@@ -75,7 +75,7 @@ const Search = ({ loading }) => {
                 title="Search by MLV Number, Property Name, Neighborhood, etc."
             />
         </div>
-        <div className="grid grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <input type='hidden' id="zone-data" name="zone-data" value={JSON.stringify(zones)} />
                 <select 
                     title="Select Zones"
@@ -143,18 +143,15 @@ const Search = ({ loading }) => {
                 })}
             </div>
         }
-        <div className="flex flex-row space-x-8 w-full">
+        <div className="flex flex-col md:flex-row space-y-4 lg:space-y-0 lg:space-x-8 w-full">
             <div className="flex flex-col space-y-2">
             <span className="text-lg font-medium">
                 Ammenities
             </span>
-                <div className="flex flex-row items-center space-x-6">
+                <div className="grid grid-cols-2 gap-4">
                     {ammenities.map((item, i) => {
                         return (
                             <div key={i} className="flex flex-row items-center space-x-2">
-                                <label htmlFor={item.title}>
-                                    {item.title}
-                                </label>
                                 <input
                                     key={i}
                                     id={item.title}
@@ -164,6 +161,9 @@ const Search = ({ loading }) => {
                                     value={item.id}
                                     className="form-checkbox"
                                 />
+                                <label htmlFor={item.title}>
+                                    {item.title}
+                                </label>
                             </div>
                         )
                     })}
@@ -174,13 +174,10 @@ const Search = ({ loading }) => {
             <span className="text-lg font-medium">
                 View
             </span>
-                <div className="flex flex-row items-center space-x-6">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                     {view.map((item, i) => {
                         return (
                             <div className="flex flex-row items-center space-x-2">
-                                <label htmlFor={item.title}>
-                                    {item.title}
-                                </label>
                                 <input
                                     id={item.title}
                                     key={i}
@@ -190,12 +187,15 @@ const Search = ({ loading }) => {
                                     value={item.id}
                                     className="form-checkbox"
                                 />
+                                <label htmlFor={item.title}>
+                                    {item.title}
+                                </label>
                             </div>
                         )
                     })}
                 </div>
             </div>
-            <div className="flex flex-col grow">
+            <div className="flex flex-col grow space-y-4 lg:space-y-0">
                 <div className="flex flex-row items-center">
                     <span className="text-lg font-medium mr-4">
                         Price Range
@@ -205,7 +205,7 @@ const Search = ({ loading }) => {
                 <RangeSlider min={0} max={10000000} step={50000} value={value} onChange={setValue} />
             </div>
         </div>
-        <div className="flex flex-row items-center">
+        <div className="flex flex-row items-center py-4">
             <button className="button min-w-[300px] mx-auto" type="submit">
                 {loading ? <ImSpinner9 className="animate-spin mx-auto"/> : 'Search'}
           </button>

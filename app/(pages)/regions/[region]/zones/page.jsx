@@ -12,12 +12,12 @@ const Page = ({ params: { region }}) => {
 
   return (
     <>
-      <Banner title="Zones" />
-      <div className="flex flex-col p-8">
-        <h2 className="text-4xl font-bold pb-2 border-b">
-          Browse Properties By Zone
+      <Banner title={`${str} Zones`} />
+      <div className="flex flex-col p-4 lg:p-8">
+        <h2 className="text-3xl md:text-4xl font-bold pb-2 border-b">
+          Browse {str} Properties By Zone
         </h2>
-        <ul className="grid grid-cols-4 gap-8 py-8">
+        <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 py-8">
           {data.zones.map((zone, i) => {
             return (
               <li key={i} className="flex flex-col h-[350px]">

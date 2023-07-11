@@ -31,15 +31,15 @@ const Navbar = () => {
             />
         </Link>
 
-        <div className={`absolute translate-y-48 space-y-8 md:space-y-0 md:translate-y-0 p-8 md:p-0 rounded-md bg-zinc-600/70 md:bg-transparent flex-col md:flex-row items-center w-full ${open ? 'flex' : 'hidden md:flex'}`}>
-        <ul className="relative md:absolute md:top-1/2 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2 flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-6 text-zinc-50 text-2xl font-medium">
+        <div className={`absolute translate-y-48 space-y-8 md:space-y-0 md:translate-y-0 p-8 md:p-0 rounded-md bg-zinc-50 md:bg-transparent flex-col md:flex-row items-center w-full ${open ? 'flex' : 'hidden md:flex'}`}>
+        <ul className="relative md:absolute md:top-1/2 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2 flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-6 text-zinc-950 md:text-zinc-50 text-2xl font-medium">
             {navMenu.map((item, i) => {
                 return (   
                 <li 
                     key={i}
                     tabIndex={i}
                 >
-                    <Link href={item.path} className="hover:text-sky-300 transition-colors">
+                    <Link onClick={() => setOpen(false)} href={item.path} className="hover:text-sky-300 transition-colors">
                         {item.title}
                     </Link>      
                 </li>
@@ -47,7 +47,7 @@ const Navbar = () => {
             })}
         </ul>
 
-        <div className="flex flex-row items-center space-x-3 text-3xl text-sky-300 md:ml-auto md:mr-4">
+        <div className="flex flex-row items-center space-x-3 text-3xl text-sky-400 md:text-sky-300 md:ml-auto md:mr-4">
             <a 
                 title="Facebook"
                 href="https://www.facebook.com/pvcoastalrealty" 

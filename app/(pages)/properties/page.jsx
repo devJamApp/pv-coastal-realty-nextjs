@@ -7,12 +7,12 @@ const Page = () => {
   return (
     <>
     <Banner title="Properties"/>
-    <div className="flex flex-col space-y-8 p-4 md:p-8 xl:p-16">
-      <div className="flex flex-row space-x-4 pb-2 border-b">
-        <h2 className="text-4xl font-bold">
+    <div className="flex flex-col space-y-8 px-4 py-8 md:p-8 xl:p-16">
+      <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-4 pb-2 border-b">
+        <h2 className="text-3xl md:text-4xl font-bold">
           Browse All Properties
         </h2>
-        <Link className="self-end hover:underline" href="/regions">
+        <Link className="md:self-end hover:underline" href="/regions">
           Or Browse By Location
         </Link>
       </div>

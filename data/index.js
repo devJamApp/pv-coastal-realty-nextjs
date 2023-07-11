@@ -1,34 +1,45 @@
 export const agents = [
     {
         name: 'Marc Leblanc',
-        description: 'description',
-        imageUrl: ''
+        description: "Marc Leblanc is a bilingual individual proficient in both French and English. Having spent the majority of his life in Calgary, Marc began his career in the construction industry after completing his education. With a family background deeply rooted in the real estate industry since the early 1980s, Marc gained valuable knowledge and insights from his parents, thus nurturing his passion for real estate. Since 2001, Marc has been a frequent visitor to the enchanting city of Puerto Vallarta, where he has explored every corner and its surrounding areas. His extensive familiarity with the region has greatly influenced his career, as he is dedicated to finding properties that perfectly align with his clients' specific needs. Recognizing the diverse lifestyles his clients seek, Marc strives to provide tailored solutions in the realm of real estate and property development.",
+        imageUrl: '/marc-leblanc.jpg'
     },
     {
-        name: 'Nicolas',
-        description: 'description',
-        imageUrl: ''
+        name: 'Nicolas Desanglois',
+        description: 'Nicolas, originally from France, pursued his studies in commerce in Paris before embarking on a career in sales at a transport company. After a few years, he made a significant shift in his professional path and relocated with his family to Montelimars, below Lyon, to venture into the real estate industry. As the quarantine period began, Nicolas and his family made the decision to leave France and settle in Costa Rica, where they enjoyed six years embracing the "Pura Vida" lifestyle. During this time, Nicolas discovered his passion for assisting fellow expatriates in finding their own piece of paradise. Since November 2021, he has been living in Puerto Vallarta, Mexico, seeking new experiences and using his expertise to help newcomers settle into their new lives.',
+        imageUrl: '/nicolas.jpg'
     },
 ]
+
+export const agency = {
+    name: 'PV Coastal Realty',
+    description: "PV Coastal Realty is a dynamic and independent company that prides itself on its boundless creativity and unwavering commitment to finding the perfect solution tailored to your needs. Whether you're searching for your ideal property in Puerto Vallarta or along the captivating coastline of Riviera Nayarit, our team is dedicated to assisting you every step of the way. We understand that you're not simply purchasing a house, but rather investing in an extraordinary lifestyle. With our extensive listing portfolio and comprehensive MLS search database, we can expedite the search process, ensuring that you swiftly embark on the next chapter of your life in Mexico, where your dream home awaits. Picture your vision, and let PV Coastal Realty be your trusted guide, guiding you through the entire process of turning your imagination into reality.",
+    address: 'Paseo Cocoteros 297, Int. 48, Nuevo Vallarta, México',
+    email: 'mleblanc@pvcoastalrealty.com​',
+    phoneMX: '523223017394',
+    phoneCA: '14038002291',
+    whatsapp: '523223017394'
+
+}
 
 
 export const popularRegions = [
     {
         title: 'Bucerias',
         region: 'North Shore',
-        description: "Living in Bucerias, Nayarit is an idyllic experience. Nestled along the beautiful Riviera Nayarit coastline in Mexico, this charming beach town offers a laid-back and vibrant lifestyle. With its pristine beaches, warm climate, and breathtaking sunsets, residents enjoy a year-round tropical paradise. Bucerias boasts a close-knit community where locals and expats blend harmoniously, creating a diverse and welcoming atmosphere. The town is dotted with cozy cafes, art galleries, and bustling markets, providing a rich cultural experience. Whether it's indulging in delicious seafood, exploring the nearby Sierra Madre mountains, or simply unwinding by the ocean, Bucerias offers a slice of paradise for those seeking a tranquil and fulfilling life.",
+        description: "Nestled along the beautiful Riviera Nayarit coastline, residents of Bucerias enjoy a laid-back and vibrant lifestyle in a year-round tropical paradise. A close-knit community where locals and expats blend harmoniously, creating a diverse and welcoming atmosphere, the town is dotted with cozy cafes, art galleries, and bustling markets, providing a rich cultural experience. Whether you choose to indulge in delicious seafood, explore the nearby Sierra Madre mountains, or simply unwind by the ocean, Bucerias offers a slice of paradise for those seeking a tranquil and fulfilling life.",
         imageUrl: '/bucerias.webp',
     },
     {
         title: 'La Cruz de Huanacaxtle',
         region: 'North Shore',
-        description: "Living in La Cruz de Huanacaxtle, Nayarit is a delightful experience. Nestled on the coast of the Pacific Ocean in Mexico, this charming town offers a relaxed and tranquil lifestyle. The warm climate, with its gentle sea breezes, creates the perfect environment for enjoying the stunning beaches and engaging in water activities like surfing and snorkeling. The town's small size fosters a close-knit community, where residents and visitors can connect through local events, delicious seafood cuisine, and vibrant markets. With its picturesque landscapes, vibrant sunsets, and welcoming atmosphere, La Cruz de Huanacaxtle provides a slice of paradise for those seeking a peaceful coastal haven.",
+        description: "Living in La Cruz is a delightful experience. With it's world class marina on the coast of Banderas Bay, this charming town offers a relaxed and tranquil lifestyle. It's small size fosters a close-knit community, where residents and visitors can connect through local events, delicious seafood cuisine, and vibrant markets. With its picturesque landscapes, vibrant sunsets, and welcoming atmosphere, La Cruz provides a slice of paradise for those seeking a peaceful coastal haven.",
         imageUrl: "/la-cruz-de-huanacaxtle.webp"
     },
     {
         title: "Punta de Mita",
         region: 'North Shore',
-        description: "Living in Punta de Mita, Nayarit is an idyllic experience that seamlessly combines natural beauty, luxurious amenities, and a vibrant community. Nestled along Mexico's Pacific coast, this coastal paradise offers breathtaking beaches, lush landscapes, and azure waters teeming with marine life. Residents enjoy a relaxed lifestyle, indulging in world-class golf courses, pristine swimming pools, and exclusive beach clubs. The local cuisine tantalizes the taste buds with fresh seafood and authentic Mexican flavors. The welcoming community fosters a sense of belonging, organizing cultural events and outdoor activities. With its serene ambiance and stunning surroundings, Punta Mita is a haven for those seeking a harmonious coastal existence.",
+        description: "Living in Punta de Mita is an idyllic experience that seamlessly combines natural beauty, luxurious amenities, and a vibrant community. Located on Mexico's Pacific coast, Punta Mita offers breathtaking beaches, lush landscapes, and azure waters teeming with marine life. Residents enjoy a relaxed lifestyle, indulging in world-class golf courses, pristine swimming pools, and exclusive beach clubs. With its serene ambiance and stunning surroundings, Punta Mita is a haven for those seeking a harmonious coastal existence.",
         imageUrl: "/punta-mita.webp"
     },
 ]

@@ -1,11 +1,18 @@
+'use client'
+
 import { MdOutlineEmail, MdOutlinePhoneIphone, MdPersonOutline, MdOutlineMessage } from 'react-icons/md'
+import { sendEmail } from '../postmark'
+import { useTransition } from 'react'
 
 const ContactForm = () => {
+
+    let [ isPending, startTransition ] = useTransition()
 
   return (
 
     <form 
         className="flex flex-col space-y-8 w-full max-w-screen-lg"
+        onSubmit={(e) => startTransition(() => sendEmail(new FormData(e.target)))}
     >
         <div className="flex flex-col space-y-5">
             <div className="flex flex-col space-y-1">
@@ -64,6 +71,7 @@ const ContactForm = () => {
                     name="message"
                     className="	form-textarea"
                     placeholder="Your Message" 
+                    rows={5}
                 />
             </div>
             <input  
@@ -76,7 +84,7 @@ const ContactForm = () => {
             type="submit"
             className="button"
         >
-            Submit
+            {isPending ? "Sending...": "Submit"}
         </button>
     </form>
 
