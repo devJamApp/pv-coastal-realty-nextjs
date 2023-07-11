@@ -22,7 +22,6 @@ export const agency = {
 
 }
 
-
 export const popularRegions = [
     {
         title: 'Bucerias',
@@ -43,7 +42,6 @@ export const popularRegions = [
         imageUrl: "/punta-mita.webp"
     },
 ]
-
 
 export const regions = [
     {
@@ -239,13 +237,13 @@ export const regions = [
                 id: 21,
                 title: 'Garza Blanca',
                 description: "Garza Blanca is anchored by the hotel/condo/restaurant development of Garza Blanca, but the region itself stretches from Conchas Chinas to just past the development of Garza Blanca. Along this coast a few developments of primarily homes and condominiums built into the rich jungle hillside, along with luxury homes and condominiums for sale along the beach.",
-                imageUrl: './garza-blanca.webp'
+                imageUrl: '/garza-blanca.webp'
             },
             {
                 id: 22,
                 title: 'Playas Gemelas',
                 description: "Playas Gemelas borders next to the development of Garza Blanca and follows the coast south until the cove of Mismaloya. The most popular developments along here are Sierra del Mar with luxury hillside homes for sale and Sierra del Mar Los Arcos with oceanfront homesites, homes and condominiums for sale. Several condo projects also enjoy the beachfront, clustered along the beach of Playas Gemelas.",
-                imageUrl: './playas-gemalas.webp'
+                imageUrl: '/playas-gemalas.webp'
             },
             {
                 id: 23,
@@ -257,13 +255,13 @@ export const regions = [
                 id: 24,
                 title: 'Boca de Tomatlan',
                 description: "South of Mismaloya on Carr. 200 Sur, the fishing town of Boca de Tomatlan is known to locals as simply Boca, which means mouth in Spanish. It is the principal water taxi departure point for South Shore destinations such as Quimixto, Las Animas and Yelapa. Easily reached by local bus, car or water taxi from Vallarta. It's the trailhead point for popular and picturesque hiking trail heading south to Las Animas beach. Most of the Boca de Tomatlan real estate opportunities here are the homes for sale that have been built between the highway and the shoreline, mostly cliffs with dramatic views of the bay.",
-                imageUrl: './boca-de-tomatlan.webp'
+                imageUrl: '/boca-de-tomatlan.webp'
             },
             {
                 id: 25,
                 title: 'El Tuito',
                 description: "High up in the hills of the Sierra Madre, surrounded by pine trees, is the town of El Tuito. It's about an hour from downtown Puerto Vallarta and its the access point for people heading to the coastal communities of Tehuamixtle and Mayto. So although it is not situated on the beach, a spectacular beach is about 35 km away. The is cowboy and cattle country, quite rural, set around a beautiful plaza and kiosk in the center of town. ",
-                imageUrl: './el-tuito.webp'
+                imageUrl: '/el-tuito.webp'
             },
         ],
         imageUrl: '/south-shore.webp'
@@ -283,37 +281,37 @@ export const regions = [
                 id: 2,
                 title: 'Costa Majahuas',
                 description: "Costa Majahuas is the largest sub-region of Costalegre but perhaps the most desolate. It is quite flat with numerous large estuaries along the coastline that is made up of practically one long stretch of beach. It begins at Punta Las Penitas and continues southward to the San Nicholas River (also known as the Tomatlán River), where it borders the large estate/resort property of Las Alamandas",
-                imageUrl: './costa-majahuas.webp'
+                imageUrl: '/costa-majahuas.webp'
             },
             {
                 id: 3,
                 title: 'Chamela',
                 description: "Starting at the San Nicholas River, the coast of Chamela runs south as far as the town of Chamela, bordering with Costa Careyes. It is flanked at each end by two major developments; Las Alamandas to the north and the new ultra-luxury 7-star resort of the Moët Hennessy Louis Vuitton (LVMH) Group. The coastline becomes more rugged and lush than found in Majahuas to the north, with plenty of small coves and beaches dotting the shoreline.",
-                imageUrl: './chamela.webp'
+                imageUrl: '/chamela.webp'
             },
             {
                 id: 4,
                 title: 'Tenacatita',
                 description: "A few kilometers down from Careyes is the Bay of Tenacatita, one of largest on the Mexican coastline. There are long beaches around the bay broken up mangrove swamps on the northern side, rising to high hills and a lusher foliage on the southern where lies Tamarindo. Along this shoreline are a few boutique resorts and small seaside communities such as La Manzanilla, Boca de Iguanas, Los Ángeles Locos, Punta Serena, Tenacatita and Tecuán. ",
-                imageUrl: './tenacatita.webp'
+                imageUrl: '/tenacatita.webp'
             },
             {
                 id: 5,
                 title: 'Careyes',
                 description: "Stretching from Chamela down to the Cuitzmala river, Costa Careyes is even more rugged than the coastline of Chamela to the north, with larger, more protected coves and bays, and spectacular high rocky cliffs that plunge precipitously into the ocean below. ",
-                imageUrl: './costa-careyes.webp'
+                imageUrl: '/costa-careyes.webp'
             },
             {
                 id: 6,
                 title: 'Barra de Navidad',
                 description: "The most developed region of Costalegre would that situation in and around Barra de Navidad. With a population of about 7,000, Barra serves a service provider to the region. It is a small farming and fishing community with a sizable American and Canadian community. There are numerous hotels ranging in quality from low-end to luxurious and far more real estate opportunities than you’ll find elsewhere along Costalegre, unless your price doesn’t have a limit.",
-                imageUrl: './barra-de-navidad.webp'
+                imageUrl: '/barra-de-navidad.webp'
             },
             {
                 id: 51,
                 title: 'Cajón de Penas',
                 description: "Lake Cajón de Peñas is a picturesque natural reservoir located in Jalisco, Mexico. Surrounded by rugged mountains and lush vegetation, it offers a serene and tranquil setting. The lake's crystal-clear waters provide a habitat for diverse flora and fauna, making it a haven for nature lovers and birdwatchers. Its stunning beauty and peaceful ambiance make it an ideal destination for outdoor enthusiasts and those seeking a peaceful retreat.",
-                imageUrl: "./cajon-de-penas.webp"
+                imageUrl: "/cajon-de-penas.webp"
             },
         ],
         imageUrl: "/costalegre.webp"
